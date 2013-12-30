@@ -1,0 +1,515 @@
+
+<!DOCTYPE HTML>
+<html style="height:100%;">
+	<head>
+		<script src="hammer.js"></script>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>ColorCalendar - Visualize your Calendar</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+		<script src="jquery.hammer.js"></script>
+		
+		<script src="data.js"></script>
+
+
+		<script src="prefixfree.min.js"></script>
+		
+		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link href="main.css" rel="stylesheet">
+		<script src="main.js"></script>
+	</head>
+	<body style="height:100%; background-color:black;">
+		<div id="all">
+			<div id="yearendar">
+				<div id="yearheader">
+					<h2><button class="btn btn-small btn-primary" onclick="chYr('p');" type="button">&lt;</button><div id="ytext">YYYY-YYYY</div><button onclick="chYr('n');" class="btn btn-small btn-primary" type="button">&gt;</button></h2>
+				</div>
+				<table class="yearendar-years table table-bordered table-hover">
+					<tr id="tr1">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr2">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr3">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr4">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr5">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr6">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr7">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr8">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr9">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr id="tr10">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div id="calendar">					
+				<div id="calcontainer">
+					<div id="calheader">
+						<h2><button class="btn btn-small btn-primary" onclick="chMon('p');" type="button">&lt;</button><div id="mtext">March 2013</div><button onclick="chMon('n');" class="btn btn-small btn-primary" type="button">&gt;</button></h2>
+					</div>		
+					<div id="daysweek">
+						<div class="dayweek"><p class="g1">Sun</p></div>
+						<div class="dayweek"><p class="g1">Mon</p></div>
+						<div class="dayweek"><p class="g1">Tues</p></div>
+						<div class="dayweek"><p class="g2">Wed</p></div>
+						<div class="dayweek"><p class="g1">Thurs</p></div>
+						<div class="dayweek"><p class="g1">Fri</p></div>
+						<div class="dayweek brn"><p class="g3">Sat</p></div>
+					</div>
+					<div id="daysmonth">
+						<!---------------------------------------- week 1 ---------------------------------------->
+						<div class="week">
+							<div class="day" id="day1">
+								<div class="daybar"><p>31</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>		
+							<div class="day" id="day2">
+								<div class="daybar"><p>1</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>
+							</div>				
+							<div class="day" id="day3">
+								<div class="daybar"><p>2</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day4">
+								<div class="daybar"><p>3</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>	
+							<div class="day" id="day5">
+								<div class="daybar"><p>4</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day6">
+								<div class="daybar"><p>5</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day brn" id="day7">
+								<div class="daybar"><p>6</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+						</div>	
+						<!---------------------------------------- week 2 ---------------------------------------->
+						<div class="week">
+							<div class="day" id="day8">
+								<div class="daybar"><p>7</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>		
+							<div class="day" id="day9">
+								<div class="daybar"><p>8</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day" id="day10">
+								<div class="daybar"><p>9</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day11">
+								<div class="daybar"><p>10</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>	
+							<div class="day" id="day12">
+								<div class="daybar"><p>11</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day13">
+								<div class="daybar"><p>12</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day brn" id="day14">
+								<div class="daybar"><p>13</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+						</div>	
+						<!---------------------------------------- week 3 ---------------------------------------->
+						<div class="week">
+							<div class="day" id="day15">
+								<div class="daybar"><p>14</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>		
+							<div class="day" id="day16">
+								<div class="daybar"><p>15</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day" id="day17">
+								<div class="daybar"><p>16</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day18">
+								<div class="daybar"><p>17</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>	
+							<div class="day" id="day19">
+								<div class="daybar"><p>18</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day20">
+								<div class="daybar"><p>19</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day brn" id="day21">
+								<div class="daybar"><p>20</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+						</div>	
+						<!---------------------------------------- week 4 ---------------------------------------->
+						<div class="week">
+							<div class="day" id="day22">
+								<div class="daybar"><p>21</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>		
+							<div class="day" id="day23">
+								<div class="daybar"><p>22</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day" id="day24">
+								<div class="daybar"><p>23</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day25">
+								<div class="daybar"><p>24</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>	
+							<div class="day" id="day26">
+								<div class="daybar"><p>25</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day27">
+								<div class="daybar"><p>26</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day brn" id="day28">
+								<div class="daybar"><p>27</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+						</div>	
+						<!---------------------------------------- week 5 ---------------------------------------->
+						<div class="week">
+							<div class="day" id="day29">
+								<div class="daybar"><p>28</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>		
+							<div class="day" id="day30">
+								<div class="daybar"><p>29</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day" id="day31">
+								<div class="daybar"><p>30</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day32">
+								<div class="daybar"><p>1</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>	
+							<div class="day" id="day33">
+								<div class="daybar"><p>2</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>	
+							<div class="day" id="day34">
+								<div class="daybar"><p>3</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day brn" id="day35">
+								<div class="daybar"><p>4</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+						</div>
+						<!---------------------------------------- week 6 ---------------------------------------->
+						<div class="week">
+							<div class="day" id="day36">
+								<div class="daybar"><p>5</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>		
+							<div class="day" id="day37">
+								<div class="daybar"><p>6</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day" id="day38">
+								<div class="daybar"><p>7</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day39">
+								<div class="daybar"><p>8</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>	
+							<div class="day" id="day40">
+								<div class="daybar"><p>9</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+							<div class="day" id="day41">
+								<div class="daybar"><p>10</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>				
+							<div class="day brn" id="day42">
+								<div class="daybar"><p>10</p></div>
+								<div class="dots">
+									<ul>
+									</ul>
+								</div>	
+							</div>			
+						</div>	
+					</div>		
+					<div id="addme">
+					</div>
+				</div>					
+				<div id="calcat" class="calcat" style="margin-top:2px !important;">
+					<div id="lbl1" style="display: inline;"><div class="caldot blue"></div><p id="dot1">1</p></div>
+					<div id="lbl2" style="display: inline;"><div class="caldot yellow"></div><p id="dot2">2</p></div>
+					<div id="lbl3" style="display: inline;"><div class="caldot green"></div><p id="dot3">3</p></div>
+					<div id="lbl4" style="display: inline;"><div class="caldot red"></div><p id="dot4">4</p></div>
+				</div>
+
+				<!-- Modal -->
+				<div id="detailsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+				  	<div class="modal-header">
+				    	<h3 id="detailsModalLabel">Modal header</h3>
+				  	</div>
+				  	<div class="modal-body">
+				  		<p id="detailsModalBody">Modal body</p>
+				  	</div>
+				  	<div class="modal-footer">
+				    	<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+				  	</div>
+				</div>
+
+			</div>	
+		</div>
+
+		<script src="moment.min.js"></script>
+		<script src="mousetrap.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+		
+		<footer style="max-width: 760px;position: relative;width: 100%;margin: 0 auto;margin-left: auto;margin-right: auto;top: 10px;">
+			<p style="color:black; font-size:1px;">blar</p>
+			<p style="border-top: 1px solid lightgray; padding-top: 20px;">&copy; Owen Versteeg 2013. MIT licensed. </p>
+			<p style="height:40px;">By reading this fine print your soul is the property of Owen and his evil minions. BWAHAHAHAHAHAHA!</p>
+		</footer>
+	</body>
+</html>
