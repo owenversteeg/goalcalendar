@@ -1,0 +1,91 @@
+/**************************** CSS Reset  ****************************/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:1px;}
+ol,ul{list-style:none;}
+blockquote,q
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+a{color:#487697;text-decoration:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/**************************** General ****************************/
+a:hover{text-decoration:underline;}
+p{color:white;font-size:11px;}
+body{font-family:Lucida Grande;background:#fff;}
+.calcat p { line-height: 13px; }
+
+/**************************** Calendar ****************************/
+#mtext { color:white; }
+#calendar{
+	margin: 0 auto;
+	padding-top: 3%;
+	width: 100%;
+	max-width: 760px;
+	text-align: center;
+  	position: relative;
+}
+#yearendar{
+	margin: 0 auto;
+	padding-top: 3%;
+	width: 100%;
+	max-width: 760px;
+	text-align: center;
+  	position: relative;
+}
+#calheader{
+	width:100%;
+	height:30px;
+	text-align:center;
+}
+#yearheader{
+	width:100%;
+	height:30px;
+	text-align:center;
+}
+#calheader h2{
+	margin-top:15px;
+}
+#yearheader h2{
+	margin-top:15px;
+}
+#calcontainer{
+	float:left;
+	margin-bottom:2%;
+	width: 100%;
+}
+#daysmonth{
+	clear:both;
+}
+.dayweek{width:14.00%;height:30px;float:left;border-right:1px solid rgb(100,100,100);}
+.dayweek p{display:block;text-align:center;font-size:10px;line-height:31px;}
+.weeku{overflow:auto;border-top:1px solid #c2c2c2;border-bottom:1px solid rgb(100,100,100);}
+.today{background:rgb(221, 255, 219);border-right:1px solid rgb(100,100,100);}
+.today .daybar{background:rgb(163, 167, 255);}
+.nottoday { background:black; }
+.day{width:14.00%;float:left;border-right:1px solid #e5e5e5;border-top:1px solid #c2c2c2;}
+.brn{border-right:none;}
+.bun{border-bottom:none;}
+.daybar{width:100%;float:left;background:rgb(100,100,100) !important;}
+.daybar p{margin-left:5px;margin-top:3px;margin-bottom:3px;font-size:10px;font-weight:400;color:white;}
+.dots{width:100%;height:35px;clear:both;}
+.dots ul{text-align:center;white-space:nowrap;overflow:hidden;}
+.dots ul li{margin-top:10px;display:inline-block;border-radius:14px;width:12px;height:12px;}
+
+/**************************** Colors ****************************/
+.none{background:#d6d6d6;}
+.none:hover{background:#dfdfdf;}
+.blue{background:#5496dd;}
+.blue:hover{background:#5c9ef9;}
+.red{background:#ff454b;}
+.red:hover{background:#ff6164;}
+.yellow{background:#ffac4d;}
+.yellow:hover{background:#ffbd6a;}
+.green{background:#94e354;}
+.green:hover{background:#98e857;}
+
+/**************************** Legend ****************************/
+#calcat{float:right;margin-right:5px;}
+#calcat p{margin-top:4px;float:left;}
+.caldot{float:left;width:12px;height:12px;border-radius:20px;margin-left:10px;margin-top:4px;margin-right:8px;}
