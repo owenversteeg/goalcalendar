@@ -76,3 +76,16 @@ body {
 	font-size: 31.5px;
 	margin-top: 15px;
 }
+
+.signuporin {
+	margin: 5px;
+}
+
+.signuporin input {
+	width: 135px;
+}
+
+.signuporin input:first-child {
+	margin-bottom: 5px;
+}
+}
