@@ -71,3 +71,8 @@ body {
 .open li {
 	position: absolute;
 }
+
+.calendarheader {
+	font-size: 31.5px;
+	margin-top: 15px;
+}
