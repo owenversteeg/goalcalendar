@@ -227,15 +227,15 @@ $(window).resize(function() {
 });
 
 function resizeStuff() {
-	var eye=0;
-	$.each($('.day'), function() {
-		eye++;
-		this.setAttribute('style', 'width:'+($('#calheader')[0].clientWidth-7)/7+'px !important');
-	});
-	
-	$.each($('.dayweek'), function() {
-		this.setAttribute('style', 'width:'+($('#calheader')[0].clientWidth-6)/7+'px !important');
-	});
+        var eye = 0, styleToSet = 'width:'+($('#calheader')[0].clientWidth-7)/7+'px !important';
+        $.each($('.day'), function() {
+                eye++;
+                this.setAttribute('style', styleToSet);
+        });
+        
+        $.each($('.dayweek'), function() {
+                this.setAttribute('style', styleToSet);
+        });
 }
 
 window.onload=resizeStuff;
