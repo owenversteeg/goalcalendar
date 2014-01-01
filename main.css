@@ -78,7 +78,10 @@ body {
 }
 
 .signuporin {
-	margin: 5px;
+	width: 150px;
+	margin: 10px;
+	float: right;
+	margin-right: 9px;
 }
 
 .signuporin input {
@@ -86,6 +89,5 @@ body {
 }
 
 .signuporin input:first-child {
-	margin-bottom: 5px;
-}
+	margin-bottom: 10px;
 }
