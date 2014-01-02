@@ -31,8 +31,8 @@
 						<input type="text" placeholder="Username" id="username">
 						<input type="text" placeholder="Password" id="password">
 						<input type="text" placeholder="Email" id="email" style="height: 0; opacity: 0; display: none;">
-						<button type="button" id="signup" class="btn btn-primary" style="width: 74px;" onclick='email.style.display = "inline-block"; email.style.height = "auto"; email.style.opacity = 1; signin.style.display = "none"; signup.style.width = "100%";'>Sign up</button> 
-						<button type="button" id="signin" class="btn btn-success" style="width: 71px;">Sign in</button>
+						<button type="button" id="signup" class="btn btn-primary" style="width: 74px;" onclick='email.style.display = "inline-block"; email.style.height = "auto"; email.style.opacity = 1; signin.style.display = "none"; signup.style.width = "100%"; signup.onclick=register;'>Sign up</button> 
+						<button type="button" id="signin" class="btn btn-success" style="width: 71px;" onclick='login()'>Sign in</button>
 					</div>
 				</div>
 				<div id="calcontainer">
