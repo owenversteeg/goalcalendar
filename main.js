@@ -258,9 +258,14 @@ function register() {
 		if (data.indexOf('Your account has been made!') !== -1) {
 			alert(data.substr(0,data.indexOf('|')-1));
 			var key = data.substr(data.indexOf('|')+2);
-			localStorage.setItem('key', key)
+			localStorage.setItem('key', key);
+			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value; 
+			document.getElementsByClassName('signuporin')[0].innerHTML = '';
+			document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
+			document.getElementsByClassName('herobody')[0].style.float = 'right';
 		} else {
 			alert(data);
+			signup.innerHTML = "Sign up";
 			signup.onclick = register;
 		}
 	});
