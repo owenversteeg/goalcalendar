@@ -247,6 +247,8 @@ function login() {
 }
 
 function register() {
+	//make the spinner
+	signup.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
 	$.post( "http://goalcalendar.aws.af.cm/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
 		alert(data)
 	});
