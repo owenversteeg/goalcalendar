@@ -21,7 +21,7 @@ body {
 }
 
 @media all and (min-width: 500px) {
-	/** This is probably the most epic piece of CSS I have ever written, let alone set eyes upon. **/
+	/** Damn. Look at that responsiveness. **/
 	p.g1:after{ content:"day" !important; }
 	p.g2:after{ content:"nesday" !important; }
 	p.g3:after{ content:"urday" !important; }
