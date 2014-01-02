@@ -19,7 +19,7 @@ function changeYear(n) {
 	}
 	if (n === 'p') {
 		refreshYears(parseInt(($('#ytext')[0].innerText).substring(0,4),10)-100);
-	}
+	}mo
 }
 	
 function chMon(p) {
@@ -39,6 +39,10 @@ $(document).ready(function() {
 	Mousetrap.bind('left', function() { if(areYearsShowing) { changeYear('p'); } else { chMon('p'); } });
 	
 	Mousetrap.bind('right', function() { if(areYearsShowing) { changeYear('n'); } else { chMon('n'); } });
+	
+	Mousetrap.bind('enter', function() { 
+		if (email.style.opacity === "1") signup.onclick();
+	});
 	
 	Mousetrap.bind('up up down down left right left right b a enter', function() {
 		alert('Konami code!');
@@ -249,6 +253,7 @@ function login() {
 function register() {
 	//make the spinner
 	signup.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
+	delete signup.onclick;
 	$.post( "http://goalcalendar.aws.af.cm/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
 		alert(data)
 	});
