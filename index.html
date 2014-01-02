@@ -28,10 +28,11 @@
 						<p>GoalCalendar can then give you statistics about your goals - including what percent of the time you accomplish a goal, when you accomplish your goals most, and how long you spend working toward a goal.</p>
 					</div>
 					<div class="signuporin">
-						<input type="text" placeholder="Username">
-						<input type="text" placeholder="Password">
-						<button type="button" class="btn btn-primary" style="width: 74px;">Sign up</button> 
-						<button type="button" class="btn btn-success" style="width: 71px;">Sign in</button>
+						<input type="text" placeholder="Username" id="username">
+						<input type="text" placeholder="Password" id="password">
+						<input type="text" placeholder="Email" id="email" style="height: 0; opacity: 0">
+						<button type="button" id="signup" class="btn btn-primary" style="width: 74px;" onclick='email.style.height = "auto"; email.style.opacity = 1; signin.style.width = 0; signup.style.width = "100%"; signin.style.padding = 0;'>Sign up</button> 
+						<button type="button" id="signin" class="btn btn-success" style="width: 71px;">Sign in</button>
 					</div>
 				</div>
 				<div id="calcontainer">
