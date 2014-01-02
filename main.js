@@ -255,6 +255,12 @@ function register() {
 	signup.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
 	delete signup.onclick;
 	$.post( "http://goalcalendar.aws.af.cm/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
-		alert(data)
+		if (data.indexOf('Your account has been made!') !== -1) {
+			alert(data.substr(0,data.indexOf('|')-1));
+			var key = data.substr(data.indexOf('|')+2);
+			localStorage.setItem('key', key)
+		} else {
+			alert(data);
+		}
 	});
 }
