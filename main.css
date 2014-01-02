@@ -81,7 +81,6 @@ body {
 	width: 150px;
 	margin: 10px;
 	float: right;
-	margin-right: 9px;
 }
 
 .signuporin input {
@@ -90,4 +89,19 @@ body {
 
 .signuporin input:first-child {
 	margin-bottom: 10px;
+}
+
+.herobody {
+	width: 590px;
+	float: left;
+	color: white;
+	text-align: left;
+}
+
+.herobody h2 {
+	margin-top: -2px;
+}
+
+.herobody p {
+	font-size: 15px;
 }
