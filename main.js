@@ -253,7 +253,7 @@ function login() {
 function register() {
 	//make the spinner
 	signup.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
-	delete signup.onclick;
+	signup.onclick = console.log;
 	$.post( "http://goalcalendar.aws.af.cm/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
 		if (data.indexOf('Your account has been made!') !== -1) {
 			alert(data.substr(0,data.indexOf('|')-1));
@@ -261,6 +261,7 @@ function register() {
 			localStorage.setItem('key', key)
 		} else {
 			alert(data);
+			signup.onclick = register;
 		}
 	});
 }
