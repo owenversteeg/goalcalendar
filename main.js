@@ -239,3 +239,15 @@ function resizeStuff() {
 }
 
 window.onload=resizeStuff;
+
+function login() {
+	$.post( "http://goalcalendar.aws.af.cm/login", { username: username.value, password: password.value }, function( data ) {
+		alert(data);
+	});
+}
+
+function register() {
+	$.post( "http://goalcalendar.aws.af.cm/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
+		alert(data)
+	});
+}
