@@ -7,6 +7,10 @@
 		<title>GoalCalendar - Keep Track Of Your Goals</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
+		<script src="jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<link rel="stylesheet" href="jquery.modal.css" type="text/css" media="screen" />
+
 		<script src="jquery.hammer.js"></script>
 		
 		<script src="data.js"></script>
@@ -376,18 +380,17 @@
 				</div>
 
 				<!-- Modal -->
-				<div id="detailsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
-				  	<div class="modal-header">
-				    	<h3 id="detailsModalLabel">Modal header</h3>
+				<div id="detailsModal" style="display:none;">
+					<div class="modal-header">
+				    		<h3 id="detailsModalLabel">Modal header</h3>
 				  	</div>
 				  	<div class="modal-body">
 				  		<p id="detailsModalBody">Modal body</p>
 				  	</div>
 				  	<div class="modal-footer">
-				    	<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+				    		<a href="#" rel="modal:close">Close</a>
 				  	</div>
 				</div>
-
 			</div>	
 		</div>
 
