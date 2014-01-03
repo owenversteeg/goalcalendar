@@ -30,14 +30,16 @@
 						<input type="text" placeholder="Username" id="username">
 						<input type="text" placeholder="Password" id="password">
 						<input type="text" placeholder="Email" id="email" style="height: 0; opacity: 0; display: none;">
-						<button type="button" id="signup" class="btn btn-primary" style="width: 74px;" onclick='email.style.display = "inline-block"; email.style.height = "auto"; email.style.opacity = 1; signin.style.display = "none"; signup.style.width = "100%"; signup.onclick=register;'>Sign up</button> 
-						<button type="button" id="signin" class="btn btn-success" style="width: 71px;" onclick='login()'>Sign in</button>
+						<button id="signup" class="btn-b btn-small smooth" style="width: 74px;" onclick='email.style.display = "inline-block"; email.style.height = "auto"; email.style.opacity = 1; signin.style.display = "none"; signup.style.width = "100%"; signup.onclick=register;'>Sign up</button> 
+						<button id="signin" class="btn-a btn-small smooth" style="width: 71px;" onclick='login()'>Sign in</button>
 					</div>
 				</div>
 				<div id="calcontainer">
 					<div id="calheader">
 						<div class="calendarheader">
-							<button class="btn btn-small btn-primary" onclick="chMon('p');" type="button">&lt;</button><h2 id="mtext">January 2014</h2><button onclick="chMon('n');" class="btn btn-small btn-primary" type="button">&gt;</button>
+							<button class="btn-a btn-small smooth" onclick="chMon('p');" type="button">&lt;</button>
+							<h2 id="mtext">January 2014</h2>
+							<button class="btn-a btn-small smooth" onclick="chMon('n');" type="button">&gt;</button>
 						</div>
 					</div>		
 					<div id="daysweek">
