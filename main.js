@@ -51,7 +51,7 @@ $(document).ready(function() {
 	
 	//If the user is logged in, add the login text to the hero unit and re-show it 
 	if (localStorage.getItem('username') && localStorage.getItem('key')) {
-		document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + localStorage.getItem('username') + " &middot; <a onclick='logout()'>Logout</a>"; 
+		document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + localStorage.getItem('username') + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
 		document.getElementsByClassName('signuporin')[0].innerHTML = '';
 		document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
 		document.getElementsByClassName('herobody')[0].style.float = 'right';
@@ -193,7 +193,7 @@ function login() {
 			var key = data.substr(data.indexOf('|')+2);
 			localStorage.setItem('username', username.value);
 			localStorage.setItem('key', key);
-			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value + " &middot; <a onclick='logout()'>Logout</a>"; 
+			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
 			document.getElementsByClassName('signuporin')[0].innerHTML = '';
 			document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
 			document.getElementsByClassName('herobody')[0].style.float = 'right';
@@ -215,10 +215,12 @@ function register() {
 			var key = data.substr(data.indexOf('|')+2);
 			localStorage.setItem('username', username.value);
 			localStorage.setItem('key', key);
-			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value + " &middot; <a onclick='logout()'>Logout</a>"; 
+			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
 			document.getElementsByClassName('signuporin')[0].innerHTML = '';
 			document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
 			document.getElementsByClassName('herobody')[0].style.float = 'right';
+			
+			alert("Now that you've signed up, you need to add goals. Click on a goal in the bottom right corner to edit it.")
 		} else {
 			alert(data);
 			signup.innerHTML = "Sign up";
