@@ -4,13 +4,10 @@
 
 var currentlySelectedDate = new Date(); //Always equal to [currently selected month] [day of pageload] [currently selected year] [time of pageload]
 //example: if page was loaded on Mar 15, 2013 at 11:57:55, and you navigated to June 2015, currentlySelectedDate would be Jun 15 2015 11:57:55
-var areYearsShowing = false; //whether or not the years calendar ('yearendar') is showing
 var dfb = 0; //how many days from the beginning of the calendar does the month start (e.g. Aug 2013 starts 4 days from the start of the calendar - on a Thurs)
 var highlighted = -1; //Which cell ID is highlighted as the current date. Only applicable, of course, when on the current month. Antiquated
 var oldHighlighted = -1; //When the "highlighted" date was last changed, whatever its' prior value was | Antiquated
 var isHighlighted = true; //Whether or not something on the current page is highlighted. | Antiquated
-var go; //Tells yearOnClick whether or not it's OK to do its' thing. Antiquated and should be removed.
-var years = {i:0}; //An old and messy object that keeps track of the what date the yearendar starts.
 
 function changeYear(n) {
 	//Change the year - p=previous year, n=next
@@ -36,9 +33,9 @@ function chMon(p) {
 $(document).ready(function() {
 	//Only do this stuff when the document's ready...
 	
-	Mousetrap.bind('left', function() { if(areYearsShowing) { changeYear('p'); } else { chMon('p'); } });
+	Mousetrap.bind('left', function() { chMon('p'); });
 	
-	Mousetrap.bind('right', function() { if(areYearsShowing) { changeYear('n'); } else { chMon('n'); } });
+	Mousetrap.bind('right', function() { chMon('n'); });
 	
 	Mousetrap.bind('enter', function() { 
 		if (email.style.opacity === "1") signup.onclick();
@@ -48,18 +45,11 @@ $(document).ready(function() {
 		alert('Konami code!');
 	});
 
-	Mousetrap.bind('esc', function() {
-		refreshYears(parseInt($('#ytext')[0].innerText.substring(0,4),10));
-		showYears(); 
-	});
-
 	bindTouchStuff();
 
 	resizeStuff();
 
 	refreshCalendar(true);
-	
-	refreshYears(2001);
 	
 	reloadBubbles();
 });
@@ -137,7 +127,7 @@ function refreshCalendar(isFirstLoad) {
 
 function removeHighlight(isFirstLoad) {
 	$('#day'+highlighted).removeClass('today');
-	setTimeout(function () { continueRefreshingStuff() },10);
+	setTimeout(function () { continueRefreshingStuff(isFirstLoad) },10);
 }
 
 function continueRefreshingStuff(isFirstLoad) {
@@ -183,46 +173,6 @@ function continueRefreshingStuff(isFirstLoad) {
 function unZoom() {
 	if (!isHighlighted) $('#day'+oldHighlighted).removeClass('today');
 	$("#daysmonth").removeClass("zoom");
-}
-
-function showYears() {
-	$('#calendar')[0].style.display = "none";
-	$('#yearendar')[0].style.display = "block";
-	areYearsShowing = true;
-}
-
-var yearOnClick = function () { 
-	if (go===true) { 
-		areYearsShowing = false;
-		currentlySelectedDate.setYear(parseInt(this.innerText,10)); 
-		refreshCalendar(); 
-		$('#yearendar')[0].style.display = "none"; 
-		$('#calendar')[0].style.display = "block"; 
-	} 
-};
-
-function refreshYears_inner() {
-	if (years.currentYearBlock.innerText !== undefined) {
-		years.currentYearBlock.innerText = years.start+years.i;
-		years.currentYearBlock.onclick=yearOnClick;
-		years.i++;
-	}
-}
-
-function refreshYears(start) {
-	go = false;
-
-	years.i = 0;
-	
-	for (var z=1; z<11; z++) {
-		years.start = start;
-		years.currentYearBlock = this;
-		$.each($('#tr'+z)[0].childNodes, refreshYears_inner);
-	}
-	
-	$('#ytext')[0].innerText = start + '-' + (start+99);
-	
-	go=true;
 }
 
 
