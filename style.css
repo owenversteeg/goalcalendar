@@ -61,7 +61,7 @@ body{font-family:Lucida Grande;background:#fff;}
 .dayweek{width:14.00%;height:30px;float:left;border-right:1px solid rgb(100,100,100);}
 .dayweek p{display:block;text-align:center;font-size:10px;line-height:31px;}
 .weeku{overflow:auto;border-top:1px solid #c2c2c2;border-bottom:1px solid rgb(100,100,100);}
-.today{background:rgb(221, 255, 219);border-right:1px solid rgb(100,100,100);}
+.today{background-image:repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.35) 10px, rgba(255, 255, 255, 0.35) 20px);border-right:1px solid rgb(100,100,100);}
 .today .daybar{background:rgb(163, 167, 255);}
 .nottoday { background:black; }
 .day{width:14.00%;float:left;border-right:1px solid #e5e5e5;border-top:1px solid #c2c2c2;}
