@@ -79,7 +79,7 @@ function reloadBubbles() {
 
 			if (typeof datas[i][dated] !== 'undefined') {
 				//only runs if that day of the month has any of the current type of event
-				$('#dots'+(x+dfb))[0].innerHTML += '<a href="#detailsModal" data-toggle="modal" onclick="$(&#39;#detailsModalLabel&#39;)[0].innerText = &#39;'+dated+' - '+datas[i].name+'&#39;; $(&#39;#detailsModalBody&#39;)[0].innerText = &#39;'+datas[i][dated]+'&#39;"><li class="'+datas[i].color+'"></li></a> ';
+				$('#dots'+(x+dfb))[0].innerHTML += '<a href="#detailsModal" rel="modal:open" onclick="$(&#39;#detailsModalLabel&#39;)[0].innerText = &#39;'+dated+' - '+datas[i].name+'&#39;; $(&#39;#detailsModalBody&#39;)[0].innerText = &#39;'+datas[i][dated]+'&#39;"><li class="'+datas[i].color+'"></li></a> ';
 				//adds a dot to that day. Each dot has a link which modifies, then opens a prefab BS modal containing details of that event
 				//TODO: use the HTML5 history API to change the URL and let people link to an event. Make sure to cover a scenario in which that event doesn't exist
 			}
