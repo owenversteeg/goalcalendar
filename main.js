@@ -42,6 +42,15 @@ $(document).ready(function() {
 	refreshCalendar(true);
 	
 	reloadBubbles();
+	
+	//If the user is logged in, add the login text to the hero unit and re-show it 
+	if (localStorage.getItem('username') && localStorage.getItem('key')) {
+		document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + localStorage.getItem('username'); 
+		document.getElementsByClassName('signuporin')[0].innerHTML = '';
+		document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
+		document.getElementsByClassName('herobody')[0].style.float = 'right';
+		document.getElementsByClassName('herobody')[0].style.display = 'block';
+	}
 });
 
 function reloadBubbles() {
