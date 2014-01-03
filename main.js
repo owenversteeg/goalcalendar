@@ -23,6 +23,7 @@ function chMon(p) {
 function logout() {
 	localStorage.removeItem('username');
 	localStorage.removeItem('key');
+	location.reload();
 }
 
 $(document).ready(function() {
