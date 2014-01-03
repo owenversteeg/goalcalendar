@@ -9,16 +9,6 @@ var highlighted = -1; //Which cell ID is highlighted as the current date. Only a
 var oldHighlighted = -1; //When the "highlighted" date was last changed, whatever its' prior value was | Antiquated
 var isHighlighted = true; //Whether or not something on the current page is highlighted. | Antiquated
 
-function changeYear(n) {
-	//Change the year - p=previous year, n=next
-	if (n === 'n') {
-		refreshYears(parseInt(($('#ytext')[0].innerText).substring(0,4),10)+100);
-	}
-	if (n === 'p') {
-		refreshYears(parseInt(($('#ytext')[0].innerText).substring(0,4),10)-100);
-	}mo
-}
-	
 function chMon(p) {
 	//Change the month - p=previous month, n=next
 	if (p === 'p') { 
@@ -92,29 +82,14 @@ function bindTouchStuff() {
 	var hammer = new Hammer(document.getElementById("all"));
 
 	hammer.ondragstart = function(ev) { 
-		if (areYearsShowing) {
-			if (ev.direction === "right") {
-				changeYear('p');
-			}
-			if (ev.direction === "left") {
-				changeYear('n');
-			}
+		if (ev.direction === "right") {
+			chMon('p');
 		}
-		else {
-			if (ev.direction === "right") {
-				chMon('p');
-			}
-			if (ev.direction === "left") {
-				chMon('n');
-			}
+		if (ev.direction === "left") {
+			chMon('n');
 		}
 	};
 	hammer = new Hammer(document.getElementById("all"));
-
-	hammer.ontransformstart = function(ev) { 
-		refreshYears(parseInt($('#ytext')[0].innerText.substring(0,4),10));
-		showYears();
-	};
 }
 
 function daysInMonth(month,year) {
