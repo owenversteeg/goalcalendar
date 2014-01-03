@@ -57,7 +57,7 @@ $(document).ready(function() {
 
 	resizeStuff();
 
-	refreshCalendar();
+	refreshCalendar(true);
 	
 	refreshYears(2001);
 	
@@ -131,20 +131,20 @@ function daysInMonth(month,year) {
 	return new Date(year, month, 0).getDate();
 }
 
-function refreshCalendar() {
-	setTimeout(removeHighlight,10);
+function refreshCalendar(isFirstLoad) {
+	setTimeout(function () { removeHighlight(isFirstLoad) },10);
 }
 
-function removeHighlight() {
+function removeHighlight(isFirstLoad) {
 	$('#day'+highlighted).removeClass('today');
-	setTimeout(continueRefreshingStuff,10);
+	setTimeout(function () { continueRefreshingStuff() },10);
 }
 
-function continueRefreshingStuff() {
+function continueRefreshingStuff(isFirstLoad) {
 	$('#day'+highlighted).removeClass('today');
 
-	$('#daysmonth').addClass('zoom');
-	
+	if (!isFirstLoad) $('#daysmonth').addClass('zoom');
+
 	var fdom = new Date(currentlySelectedDate.getFullYear(), currentlySelectedDate.getMonth(), 1).getDay()+1; //finds first day of month
 	
 	dfb = 0; //days from beginning that month starts
@@ -175,7 +175,7 @@ function continueRefreshingStuff() {
 		isHighlighted = true;
 	}
 	
-	setTimeout(unZoom, 200);
+	if (!isFirstLoad) setTimeout(unZoom, 200);
 	
 	reloadBubbles();
 }
@@ -286,3 +286,6 @@ function register() {
 		}
 	});
 }
+
+//If the user is logged in, hide the hero unit
+if (localStorage.getItem('username') && localStorage.getItem('key')) document.head.innerHTML += "<style type='text/css'>.hero { display: none; }</style>"
