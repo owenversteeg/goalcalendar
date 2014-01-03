@@ -134,11 +134,8 @@ a:hover {
 }
 
 p {
-	color: white;font-size: 11px;
-}
-
-body {
-	font-family: Lucida Grande;background: #fff;
+	color: white;
+	font-size: 11px;
 }
 
 .calcat p { 
@@ -239,7 +236,12 @@ body {
 }
 
 .daybar p {
-	margin-left: 5px;margin-top: 3px;margin-bottom: 3px;font-size: 10px;font-weight: 400;color: white;
+	margin-left: 5px;
+	margin-top: 2px;
+	margin-bottom: 4px;
+	font-size: 11px;
+	font-weight: 400;
+	color: white;
 }
 
 .dots {
