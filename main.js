@@ -245,8 +245,22 @@ function resizeStuff() {
 window.onload=resizeStuff;
 
 function login() {
-	$.post( "http://goalcalendar.aws.af.cm/login", { username: username.value, password: password.value }, function( data ) {
-		alert(data);
+	signin.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
+	signin.onclick = console.log;
+	$.post( "http://goalcalendar.aws.af.cm/login", { username: username.value, password: password.value }, function(data) {
+		if (data.indexOf('You have been logged in!') !== -1) {
+			alert(data.substr(0,data.indexOf('|')-1));
+			var key = data.substr(data.indexOf('|')+2);
+			localStorage.setItem('key', key);
+			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value; 
+			document.getElementsByClassName('signuporin')[0].innerHTML = '';
+			document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
+			document.getElementsByClassName('herobody')[0].style.float = 'right';
+		} else {
+			alert(data);
+			signin.innerHTML = "Sign in";
+			signin.onclick = login;
+		}
 	});
 }
 
