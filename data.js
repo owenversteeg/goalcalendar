@@ -6,7 +6,7 @@ var violin = {
 	'1/15/2014': '17:00 Work out fingerings for the new orchestra piece.',
 	'1/21/2014': '17:30 Replace E string, practice shifting.',
 	'1/22/2014': '17:00 Work on dynamics and tempo for the Tchaikovsky.',
-	'1/26/2014': '17:00 Find a duet piece for the Vivaldi.',
+	'1/6/2014': '17:00 Find a duet piece for the Vivaldi.',
 	'1/26/2014': '17:00 Practice the Brahms with piano and viola accompaniment.',
 	'1/27/2014': '17:00 Purchase a new bow and rosin.'
 };
@@ -25,7 +25,7 @@ var rowing = {
 	'color': 'yellow',
 	'1/4/2014': 'Set up ergs in the gym',
 	'1/6/2014': 'Practice on erg for 90 minutes',
-	'1/16/2014': 'Practice on erg for 60 minutes, practice 2k',
+	'1/17/2014': 'Practice on erg for 60 minutes, practice 2k',
 	'1/23/2014': 'Practice on erg for 70 minutes, purchase new gloves'
 }
 
@@ -33,10 +33,10 @@ var cleaning = {
 	'name': 'Cleaning',
 	'color': 'green',
 	'1/2/2014': 'Dust the pantry and the shelves',
-	'1/5/2014': 'Clean up needles from Christmas tree',
+	'1/6/2014': 'Clean up needles from Christmas tree',
 	'1/9/2014': 'Move junk out of living room',
 	'1/17/2014': 'Organize books on bookshelf',
-	'1/24/2014': 'Wash the sheets and do the dry cleaning',
+	'1/25/2014': 'Wash the sheets and do the dry cleaning',
 	'1/29/2014': 'Mop the living room floor'
 }
 
