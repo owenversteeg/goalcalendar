@@ -368,3 +368,9 @@ footer div hr {
 	width: 100%;
 	margin-bottom: 25px;
 }
+
+.day a {
+	line-height: 27px;
+	font-size: 11px;
+	color: white;
+}
