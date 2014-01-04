@@ -108,11 +108,11 @@ body {
 	font-size: 15px;
 }
 
-.logout {
+.link {
 	cursor: pointer;
 }
 
-.logout:hover {
+.link:hover {
 	color: #0068B6;
 }
 
