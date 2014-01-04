@@ -90,21 +90,23 @@ $(document).ready(function() {
 	
 	updateGoalText();
 	
-	username.onkeyup = password.onkeyup = email.onkeyup = function() {
-		//autovalidation
-		colors = ["black", "black", "black"];
+	if (username && password && email) {
+		username.onkeyup = password.onkeyup = email.onkeyup = function() {
+			//autovalidation
+			colors = ["black", "black", "black"];
+	
+			if (!validateUsername(username.value)) colors[0] = "red";
+			if (!validatePassword(password.value)) colors[1] = "red";
+			if (!validateEmail(email.value)) colors[2] = "red";
 
-		if (!validateUsername(username.value)) colors[0] = "red";
-		if (!validatePassword(password.value)) colors[1] = "red";
-		if (!validateEmail(email.value)) colors[2] = "red";
-
-		username.style.color = colors[0];
-		password.style.color = colors[1]
-		email.style.color = colors[2]
+			username.style.color = colors[0];
+			password.style.color = colors[1]
+			email.style.color = colors[2]
 		
-		if (colors[0] === "red") warningp.innerText = "Your password must be at least six characters and include one number, one lowercase letter, and one uppercase leter.";
-		if (colors[1] === "red") warningp2.innerText = "Your username must be at least three characters and can include letters, numbers, and the following symbols: @ . _";
-	};
+			if (colors[0] === "red") warningp.innerText = "Your password must be at least six characters and include one number, one lowercase letter, and one uppercase leter.";
+			if (colors[1] === "red") warningp2.innerText = "Your username must be at least three characters and can include letters, numbers, and the following symbols: @ . _";
+		};
+	}
 });
 
 function updateGoalText() {
