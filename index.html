@@ -371,15 +371,16 @@
 					</div>		
 					<div id="addme">
 					</div>
-				</div>					
-				<div id="calcat" class="calcat" style="margin-top:2px !important;">
-					<div id="lbl1" style="display: inline;"><div class="caldot blue"></div><p id="dot1">1</p></div>
-					<div id="lbl2" style="display: inline;"><div class="caldot yellow"></div><p id="dot2">2</p></div>
-					<div id="lbl3" style="display: inline;"><div class="caldot green"></div><p id="dot3">3</p></div>
-					<div id="lbl4" style="display: inline;"><div class="caldot red"></div><p id="dot4">4</p></div>
 				</div>
+				<a href="#editEventsModal" rel="modal:open">
+					<div id="calcat" class="calcat" style="margin-top:2px !important;">
+						<div id="lbl1" style="display: inline;"><div class="caldot blue"></div><p id="dot1">Goal 1</p></div>
+						<div id="lbl2" style="display: inline;"><div class="caldot yellow"></div><p id="dot2">Goal 2</p></div>
+						<div id="lbl3" style="display: inline;"><div class="caldot green"></div><p id="dot3">Goal 3</p></div>
+						<div id="lbl4" style="display: inline;"><div class="caldot red"></div><p id="dot4">Goal 4</p></div>
+					</div>
+				</a>
 
-				<!-- Modal -->
 				<div id="detailsModal" style="display:none;">
 					<div class="modal-header">
 				    		<h3 id="detailsModalLabel">Modal header</h3>
@@ -389,6 +390,25 @@
 				  	</div>
 				  	<div class="modal-footer">
 				    		<a href="#" rel="modal:close">Close</a>
+				  	</div>
+				</div>
+				
+				<div id="editEventsModal" style="display:none;">
+					<div class="modal-header">
+				    		<h3 id="detailsModalLabel">Edit goals</h3>
+				  	</div>
+				  	<div class="modal-body">
+				  		<input type="text" class="smooth" id="goal1" placeholder="Goal 1">
+						<br><br>
+						<input type="text" class="smooth" id="goal2" placeholder="Goal 2">
+						<br><br>
+						<input type="text" class="smooth" id="goal3" placeholder="Goal 3">
+						<br><br>
+						<input type="text" class="smooth" id="goal4" placeholder="Goal 4">
+						<br><br>
+				  	</div>
+				  	<div class="modal-footer">
+				    		<button class="smooth btn-a btn-small">Save</button>
 				  	</div>
 				</div>
 			</div>	
