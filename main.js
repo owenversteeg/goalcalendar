@@ -205,7 +205,8 @@ function resizeStuff() {
 window.onload=resizeStuff;
 
 function login() {
-	signin.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
+	//blue
+	signin.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 30px;'></img>";
 	signin.onclick = console.log;
 	$.post( serverURL + "/login", { username: username.value, password: password.value }, function(data) {
 		if (data.indexOf('You have been logged in!') !== -1) {
@@ -233,8 +234,8 @@ function makeLoggedInStyle(usernameToUse) {
 }
 
 function register() {
-	//make the spinner
-	signup.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
+	//make the spinner - it's green
+	signup.innerHTML = "<img src='http://i.imgur.com/U1OZOIn.gif' alt='loading icon' style='height: 30px;'></img>";
 	signup.onclick = console.log;
 	$.post( serverURL + "/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
 		if (data.indexOf('Your account has been made!') !== -1) {
@@ -257,13 +258,19 @@ function register() {
 if (localStorage.getItem('username') && localStorage.getItem('key')) document.head.innerHTML += "<style type='text/css'>.hero { display: none; }</style>"
 
 function saveNewCompletedDailyGoal() {
+	//blue
+	savenewcompleteddailygoalbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 30px;'></img>";
 	$.post( serverURL + "/newCompletedDailyGoal", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), dailygoaldate: dailygoaldate.value, dailygoaltime: dailygoaltime.value, dailygoaldescription: dailygoaldescription.value, whichgoal: whichgoal.value }, function( data ) {
+		savenewcompleteddailygoalbutton.innerHTML = "Save";
 		alert(data);
 	});
 }
 
 function saveNewDailyGoals() {
+	//blue
+	savenewdailygoalsbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 30px;'></img>";
 	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value }, function( data ) {
+		savenewdailygoalsbutton.innerHTML = "Save";
 		alert(data);
 	});
 }
