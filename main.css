@@ -232,7 +232,9 @@ p {
 }
 
 .daybar {
-	width: 100%;float: left;background: rgb(100,100,100) !important;
+	width: 100%;
+	float: left;
+	background: rgb(100,100,100) !important;
 }
 
 .daybar p {
@@ -246,60 +248,68 @@ p {
 }
 
 .dots {
-	width: 100%;height: 35px;clear: both;
+	width: 100%;
+	height: 35px;
+	clear: both;
 }
 
 .dots ul {
-	text-align: center;white-space: nowrap;overflow: hidden;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .dots ul li {
-	margin-top: 10px;display: inline-block;border-radius: 14px;width: 12px;height: 12px;
+	margin-top: 10px;
+	display: inline-block;
+	border-radius: 14px;
+	width: 12px;
+	height: 12px;
 }
 
 /**************************** Colors ****************************/
-.none{
+.none {
 	background: #d6d6d6;
 }
 
-.none:hover{
+.none:hover {
 	background: #dfdfdf;
 }
 
-.blue{
+.blue {
 	background: #5496dd;
 }
 
-.blue:hover{
+.blue:hover {
 	background: #5c9ef9;
 }
 
-.red{
+.red {
 	background: #ff454b;
 }
 
-.red:hover{
+.red:hover {
 	background: #ff6164;
 }
 
-.yellow{
+.yellow {
 	background: #ffac4d;
 }
 
-.yellow:hover{
+.yellow:hover {
 	background: #ffbd6a;
 }
 
-.green{
+.green {
 	background: #94e354;
 }
 
-.green:hover{
+.green:hover {
 	background: #98e857;
 }
 
 /**************************** Legend ****************************/
-#calcat{
+#calcat {
 	float: right;
 	margin-right: 5px;
 }
@@ -309,7 +319,7 @@ p {
 	float: left;
 }
 
-.caldot{
+.caldot {
 	float: left;
 	width: 12px;
 	height: 12px;
@@ -319,7 +329,7 @@ p {
 	margin-right: 8px;
 }
 
-.footer {
+footer {
 	text-align: left
 }
 
