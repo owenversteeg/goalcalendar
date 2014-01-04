@@ -133,16 +133,16 @@ function continueRefreshingStuff(isFirstLoad) {
 	for (var i=1; i<43; i++) { //43 not 42 and 1 not 0 because dates are not arrayish
 		//for each of the 42 day cells
 		
-		document.getElementById('day'+i).childNodes[1].childNodes[0].innerText = ((i-fdom)+1); //labels days (with neg. #s, unfortunately)
+		document.getElementById('day'+i).childNodes[0].childNodes[1].childNodes[0].innerText = ((i-fdom)+1); //labels days (with neg. #s, unfortunately)
 		if ((i-fdom)+1<1) {
 			dfb++;
 			//if there are days numbered 0 or less
 			var x = daysInMonth(currentlySelectedDate.getMonth(),currentlySelectedDate.getUTCFullYear()); //days in previous month
-			document.getElementById('day'+i).childNodes[1].childNodes[0].innerText = (x+((i-fdom)+1)); //renumber dates before start of month correctly
+			document.getElementById('day'+i).childNodes[0].childNodes[1].childNodes[0].innerText = (x+((i-fdom)+1)); //renumber dates before start of month correctly
 		}
 		else if ((i-fdom)+1>daysInMonth(currentlySelectedDate.getMonth()+1,currentlySelectedDate.getUTCFullYear())) {
 			//if there are days numbered over the max. # of days in this month
-			document.getElementById('day'+i).childNodes[1].childNodes[0].innerText = (((i-fdom)+1)-daysInMonth(currentlySelectedDate.getMonth()+1,currentlySelectedDate.getUTCFullYear())); //renumber dates after end of month correctly
+			document.getElementById('day'+i).childNodes[0].childNodes[1].childNodes[0].innerText = (((i-fdom)+1)-daysInMonth(currentlySelectedDate.getMonth()+1,currentlySelectedDate.getUTCFullYear())); //renumber dates after end of month correctly
 		}
 	}
 	isHighlighted=false;
