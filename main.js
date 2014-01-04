@@ -64,8 +64,13 @@ function reloadBubbles(isFirstRun) {
 		//bacon-wrapped dot divs (or rather, a-wrapped dot divs)
 		if (isFirstRun) {
 			this.parentElement.children[0].outerHTML = '<a href="#newDailyGoalCompletedModal" rel="modal:open" style="display: block;" onclick="dailygoaldate.value=\''+(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear()+'\';">'+this.parentElement.children[0].outerHTML+'</a>';
+			this.parentElement.children[0].onclick = function() { 
+				dailygoaldate.value=(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear();
+			}
 		} else {
-			this.parentElement.children[0].onclick = "dailygoaldate.value='"+(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear()+"';";
+			this.parentElement.children[0].onclick = function() { 
+				dailygoaldate.value=(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear();
+			}
 		}
 		x++;
 	});
