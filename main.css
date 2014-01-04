@@ -25,9 +25,9 @@ body {
 
 @media all and (min-width: 500px) {
 	/** Damn. Look at that responsiveness. **/
-	p.g1: after{ content: "day" !important; }
-	p.g2: after{ content: "nesday" !important; }
-	p.g3: after{ content: "urday" !important; }
+	p.g1:after{ content: "day" !important; }
+	p.g2:after{ content: "nesday" !important; }
+	p.g3:after{ content: "urday" !important; }
 }
 
 #daysweek {
