@@ -59,8 +59,10 @@ function reloadBubbles() {
 	//remove all dots on the page
 	var x = 1;
 	$.each($('.dots'), function() { 
-		this.innerHTML = ""; 
+		this.innerHTML = "";
 		this.id = 'dots'+x;
+		//bacon-wrapped dot divs (or rather, a-wrapped dot divs)
+		this.parentElement.innerHTML = '<a href="#newDailyGoalCompletedModal" rel="modal:open" style="display: block;" onclick="dailygoaldate.value=\''+(currentlySelectedDate.getMonth+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+currentlySelectedDate.getUTCFullYear()+'\'>'+this.parentElement.innerHTML+'</a>';
 		x++;
 	});
 	x=1;
@@ -75,7 +77,7 @@ function reloadBubbles() {
 
 			if (typeof datas[i][dated] !== 'undefined') {
 				//only runs if that day of the month has any of the current type of event
-				$('#dots'+(x+dfb))[0].innerHTML += '<a href="#detailsModal" rel="modal:open" onclick="$(&#39;#detailsModalLabel&#39;)[0].innerText = &#39;'+dated+' - '+datas[i].name+'&#39;; $(&#39;#detailsModalBody&#39;)[0].innerText = &#39;'+datas[i][dated]+'&#39;"><li class="'+datas[i].color+'"></li></a> ';
+				$('#dots'+(x+dfb))[0].innerHTML += '<a href="#detailsModal" style="position: relative; z-index: 40;" rel="modal:open" onclick="$(&#39;#detailsModalLabel&#39;)[0].innerText = &#39;'+dated+' - '+datas[i].name+'&#39;; $(&#39;#detailsModalBody&#39;)[0].innerText = &#39;'+datas[i][dated]+'&#39;"><li class="'+datas[i].color+'"></li></a> ';
 				//adds a dot to that day. Each dot has a link which modifies, then opens a prefab BS modal containing details of that event
 				//TODO: use the HTML5 history API to change the URL and let people link to an event. Make sure to cover a scenario in which that event doesn't exist
 			}
