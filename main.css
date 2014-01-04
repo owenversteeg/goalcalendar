@@ -177,11 +177,7 @@ p {
 	text-align: center;
 }
 
-#calheader h2 {
-	margin-top: 15px;
-}
-
-#yearheader h2{
+#calheader h3 {
 	margin-top: 15px;
 }
 
@@ -339,4 +335,8 @@ footer {
 
 .dayweek p {
 	margin: 0;
+}
+
+.modal-header {
+	margin-top: -20px;
 }
