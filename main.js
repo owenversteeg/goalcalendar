@@ -90,10 +90,8 @@ $(document).ready(function() {
 		password.style.color = colors[1]
 		email.style.color = colors[2]
 		
-		if (email.style.opacity === "1") {
-			if (colors[0] === "red") warningp.innerText = "Your password must be at least six characters and include one number, one lowercase letter, and one uppercase leter.";
-			if (colors[1] === "red") warningp2.innerText = "Your username must be at least three characters and can include letters, numbers, and the following symbols: @ . _";
-		}
+		if (colors[0] === "red") warningp.innerText = "Your password must be at least six characters and include one number, one lowercase letter, and one uppercase leter.";
+		if (colors[1] === "red") warningp2.innerText = "Your username must be at least three characters and can include letters, numbers, and the following symbols: @ . _";
 	};
 });
 
