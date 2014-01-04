@@ -251,3 +251,9 @@ function saveNewCompletedDailyGoal() {
 		alert(data);
 	});
 }
+
+function saveNewDailyGoals() {
+	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value }, function( data ) {
+		alert(data);
+	});
+}
