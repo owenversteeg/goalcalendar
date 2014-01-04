@@ -236,7 +236,7 @@ p {
 }
 
 .daybar p {
-	margin-left: 5px;
+	margin-left: -1px;
 	margin-top: 2px;
 	margin-bottom: 4px;
 	font-size: 11px;
@@ -316,4 +316,16 @@ p {
 	margin-left: 10px;
 	margin-top: 4px;
 	margin-right: 8px;
+}
+
+.footer {
+	text-align: left
+}
+
+dots.ul {
+	padding: 0;
+}
+
+.dayweek p {
+	margin: 0;
 }
