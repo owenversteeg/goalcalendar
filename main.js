@@ -247,7 +247,7 @@ function register() {
 if (localStorage.getItem('username') && localStorage.getItem('key')) document.head.innerHTML += "<style type='text/css'>.hero { display: none; }</style>"
 
 function saveNewCompletedDailyGoal() {
-	$.post( serverURL + "/newCompletedDailyGoal", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), dailygoaldate: dailygoaldate.value, dailygoaltime: dailygoaltime.value, dailygoaldescription: dailygoaldescription.value }, function( data ) {
+	$.post( serverURL + "/newCompletedDailyGoal", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), dailygoaldate: dailygoaldate.value, dailygoaltime: dailygoaltime.value, dailygoaldescription: dailygoaldescription.value, whichgoal: whichgoal.value }, function( data ) {
 		alert(data);
 	});
 }
