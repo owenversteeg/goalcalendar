@@ -51,6 +51,7 @@ $(document).ready(function() {
 	
 	//If the user is logged in, add the login text to the hero unit and re-show it 
 	if (localStorage.getItem('username') && localStorage.getItem('key')) {
+		document.head.innerHTML += "<style type='text/css'>.hero { display: block; }</style>"
 		makeLoggedInStyle(localStorage.getItem('username'));
 	}
 });
@@ -242,3 +243,9 @@ function register() {
 
 //If the user is logged in, hide the hero unit
 if (localStorage.getItem('username') && localStorage.getItem('key')) document.head.innerHTML += "<style type='text/css'>.hero { display: none; }</style>"
+
+function saveNewCompletedDailyGoal() {
+	$.post( "http://goalcalendar.aws.af.cm/newCompletedDailyGoal", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), dailygoaldate: dailygoaldate.value, dailygoaltime: dailygoaltime.value, dailygoaldescription: dailygoaldescription.value }, function( data ) {
+		alert(data);
+	});
+}
