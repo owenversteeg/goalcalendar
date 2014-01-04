@@ -82,8 +82,7 @@ $(document).ready(function() {
 		//autovalidation
 		colors = ["black", "black", "black"];
 
-		if (!validateUsername(username.value)) {
-			colors[0] = "red";
+		if (!validateUsername(username.value)) colors[0] = "red";
 		if (!validatePassword(password.value)) colors[1] = "red";
 		if (!validateEmail(email.value)) colors[2] = "red";
 
