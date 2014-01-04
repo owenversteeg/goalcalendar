@@ -293,6 +293,7 @@ function showHelpText() {
 function getUserStarted() {
 	blankEvents();
 	showHelpText();
+	updateGoalText();
 }
 
 function register() {
