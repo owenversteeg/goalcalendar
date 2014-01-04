@@ -413,12 +413,14 @@
 				</div>
 				
 				<div id="newDailyGoalCompletedModal" style="display:none;">
-					<input type="text" id="dailygoaldate" value="1/1/2014">
-				  	<div class="modal-body">
-				  		<p id="detailsModalBody">Modal body</p>
+					<div class="modal-header">
+				    		<h3 id="detailsModalLabel">New completed daily goal</h3>
 				  	</div>
+					Date you completed a daily goal: <input type="text" id="dailygoaldate" value="1/1/2014">
+					Time you completed a daily goal (24hr time, please): <input type="text" id="dailygoaltime" value="13:15">
+					Add a description to the completed daily goal: <input type="text" id="dailygoaltime" value="Did 40 pushups and 30 situps.">
 				  	<div class="modal-footer">
-				    		<a href="#" rel="modal:close">Close</a>
+				    		<button class="smooth btn-a btn-small" onclick="saveNewCompletedDailyGoal">Save</button>
 				  	</div>
 				</div>
 			</div>	
