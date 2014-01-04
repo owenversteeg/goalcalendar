@@ -65,11 +65,11 @@ function reloadBubbles(isFirstRun) {
 		if (isFirstRun) {
 			this.parentElement.children[0].outerHTML = '<a href="#newDailyGoalCompletedModal" rel="modal:open" style="display: block;" onclick="dailygoaldate.value=\''+(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear()+'\';">'+this.parentElement.children[0].outerHTML+'</a>';
 			this.parentElement.children[0].onclick = function() { 
-				dailygoaldate.value=(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear();
+				dailygoaldate.value=(currentlySelectedDate.getMonth()+1)+'/'+this.children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear();
 			}
 		} else {
 			this.parentElement.children[0].onclick = function() { 
-				dailygoaldate.value=(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear();
+				dailygoaldate.value=(currentlySelectedDate.getMonth()+1)+'/'+this.children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear();
 			}
 		}
 		x++;
