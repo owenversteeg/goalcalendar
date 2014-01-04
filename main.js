@@ -47,7 +47,7 @@ $(document).ready(function() {
 
 	refreshCalendar(true);
 	
-	reloadBubbles();
+	reloadBubbles(true);
 	
 	//If the user is logged in, add the login text to the hero unit and re-show it 
 	if (localStorage.getItem('username') && localStorage.getItem('key')) {
@@ -55,14 +55,18 @@ $(document).ready(function() {
 	}
 });
 
-function reloadBubbles() {
+function reloadBubbles(isFirstRun) {
 	//remove all dots on the page
 	var x = 1;
 	$.each($('.dots'), function() { 
 		this.innerHTML = "";
 		this.id = 'dots'+x;
 		//bacon-wrapped dot divs (or rather, a-wrapped dot divs)
-		this.parentElement.innerHTML = '<a href="#newDailyGoalCompletedModal" rel="modal:open" style="display: block;" onclick="dailygoaldate.value=\''+(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear()+'\'">'+this.parentElement.innerHTML+'</a>';
+		if (isFirstRun) {
+			this.parentElement.innerHTML = '<a href="#newDailyGoalCompletedModal" rel="modal:open" style="display: block;" onclick="dailygoaldate.value=\''+(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear()+'\'">'+this.parentElement.innerHTML+'</a>';
+		} else {
+			this.parentElement.onclick = "dailygoaldate.value='"+(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+'/'+currentlySelectedDate.getUTCFullYear()+"';";
+		}
 		x++;
 	});
 	x=1;
