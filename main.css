@@ -31,7 +31,7 @@ body {
 }
 
 #daysweek {
-	margin-top: 20px;
+	margin-top: 70px;
 }
 
 .btn.btn-small.btn-primary {
@@ -339,4 +339,9 @@ footer {
 
 .modal-header {
 	margin-top: -20px;
+}
+
+.calendarheader button.btn-small {
+	font-size: 40px;
+	border-radius: 10px;
 }
