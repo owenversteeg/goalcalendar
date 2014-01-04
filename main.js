@@ -270,6 +270,6 @@ function saveNewDailyGoals() {
 
 function getNewDataFile() {
 	$.post( serverURL + "/data.js", { username: localStorage.getItem('username'), key: localStorage.getItem('key') }, function( data ) {
-		alert(data);
+		eval(data); //yadda yadda
 	});
 }
