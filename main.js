@@ -90,7 +90,7 @@ $(document).ready(function() {
 	
 	updateGoalText();
 	
-	if (username && password && email) {
+	if (typeof username !== "undefined") {
 		username.onkeyup = password.onkeyup = email.onkeyup = function() {
 			//autovalidation
 			colors = ["black", "black", "black"];
