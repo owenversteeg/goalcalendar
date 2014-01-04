@@ -51,12 +51,7 @@ $(document).ready(function() {
 	
 	//If the user is logged in, add the login text to the hero unit and re-show it 
 	if (localStorage.getItem('username') && localStorage.getItem('key')) {
-		all.style.height = "500px";
-		document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + localStorage.getItem('username') + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
-		document.getElementsByClassName('signuporin')[0].innerHTML = '';
-		document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
-		document.getElementsByClassName('herobody')[0].style.float = 'right';
-		document.getElementsByClassName('hero')[0].style.display = 'block';
+		makeLoggedInStyle(localStorage.getItem('username'));
 	}
 });
 
@@ -194,17 +189,23 @@ function login() {
 			var key = data.substr(data.indexOf('|')+2);
 			localStorage.setItem('username', username.value);
 			localStorage.setItem('key', key);
-			all.style.height = "500px";
-			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
-			document.getElementsByClassName('signuporin')[0].innerHTML = '';
-			document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
-			document.getElementsByClassName('herobody')[0].style.float = 'right';
+			makeLoggedInStyle(username.value);
 		} else {
 			alert(data);
 			signin.innerHTML = "Sign in";
 			signin.onclick = login;
 		}
 	});
+}
+
+function makeLoggedInStyle(usernameToUse) {
+	all.style.height = "500px";
+	document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + usernameToUse + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
+	document.getElementsByClassName('signuporin')[0].innerHTML = '';
+	//document.getElementsByClassName('signuporin')[0].innerHTML = '<button class="btn-a btn-small" style="margin: 0;">Add Event</button>;
+	//document.getElementsByClassName('signuporin')[0].style.cssText += "float: left; text-align: left; margin-top: 2px;";
+	document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
+	document.getElementsByClassName('herobody')[0].style.float = 'right';
 }
 
 function register() {
@@ -217,11 +218,7 @@ function register() {
 			var key = data.substr(data.indexOf('|')+2);
 			localStorage.setItem('username', username.value);
 			localStorage.setItem('key', key);
-			all.style.height = "500px";
-			document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + username.value + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
-			document.getElementsByClassName('signuporin')[0].innerHTML = '';
-			document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
-			document.getElementsByClassName('herobody')[0].style.float = 'right';
+			makeLoggedInStyle(username.value);
 			
 			alert("Now that you've signed up, you need to add goals. Click on a goal in the bottom right corner to edit it.")
 		} else {
