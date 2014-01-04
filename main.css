@@ -15,7 +15,7 @@ ol, ul {
 #all {
 	z-index: 1000;
 	width: 100%;
-	height: 674px;
+	height: 732px;
 }
 
 body {
@@ -360,4 +360,10 @@ footer {
 
 .herobody h1 {
 	font-size: 3em;
+}
+
+footer p hr {
+	border-bottom: 1px solid lightgray;
+	border-top: 0;
+	width: 100%;
 }
