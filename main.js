@@ -278,8 +278,8 @@ function login() {
 
 function makeLoggedInStyle(usernameToUse) {
 	all.style.height = "500px";
-	document.getElementsByClassName('signuporin')[0].innerHTML = "Signed in as " + usernameToUse + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
-	document.getElementsByClassName('herobody')[0].innerHTML = '<a onclick="showHelpText();">Help</a>';
+	document.getElementsByClassName('signuporin')[0].innerHTML = "Signed in as " + usernameToUse + " &middot; <a class='link' onclick='logout()'>Logout</a>"; 
+	document.getElementsByClassName('herobody')[0].innerHTML = '<a class="link" onclick="showHelpText();">Help</a>';
 	//document.getElementsByClassName('signuporin')[0].innerHTML = '<button class="btn-a btn-small" style="margin: 0;">Add Event</button>;
 	document.getElementsByClassName('signuporin')[0].style.cssText += "color: white; text-align: right; width: 400px; margin-top: -1px;";
 	document.getElementsByClassName('herobody')[0].style.cssText += "width: 330px;"
