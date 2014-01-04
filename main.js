@@ -86,6 +86,7 @@ $(document).ready(function() {
 	if (localStorage.getItem('username') && localStorage.getItem('key')) {
 		document.head.innerHTML += "<style type='text/css'>.hero { display: block; }</style>"
 		makeLoggedInStyle(localStorage.getItem('username'));
+		getNewDataFile();
 	}
 	
 	updateGoalText();
