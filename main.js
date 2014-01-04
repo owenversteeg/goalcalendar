@@ -2,6 +2,25 @@
 
 /*jshint eqeqeq:true, bitwise:true, strict:false, undef:true, unused:true, curly:true, browser:true */
 
+function validateEmail(email) {
+	//http://stackoverflow.com/a/46181/1608264
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+function validatePassword(password) {
+	//at least one number, one lowercase and one uppercase letter
+	//at least six characters
+	var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+	return re.test(password);
+}
+
+function validateUsername(username) {
+	//characters such as 0-9, A-Z, a-z, _, ., @, 3-100 characters long
+	var re = /^[\w\.@]{3,100}$/;
+	return re.test(username);
+}
+
 var currentlySelectedDate = new Date(); //Always equal to [currently selected month] [day of pageload] [currently selected year] [time of pageload]
 //example: if page was loaded on Mar 15, 2013 at 11:57:55, and you navigated to June 2015, currentlySelectedDate would be Jun 15 2015 11:57:55
 var dfb = 0; //how many days from the beginning of the calendar does the month start (e.g. Aug 2013 starts 4 days from the start of the calendar - on a Thurs)
@@ -58,6 +77,25 @@ $(document).ready(function() {
 	}
 	
 	updateGoalText();
+	
+	username.onkeyup = password.onkeyup = email.onkeyup = function() {
+		//autovalidation
+		colors = ["black", "black", "black"];
+
+		if (!validateUsername(username.value)) {
+			colors[0] = "red";
+		if (!validatePassword(password.value)) colors[1] = "red";
+		if (!validateEmail(email.value)) colors[2] = "red";
+
+		username.style.color = colors[0];
+		password.style.color = colors[1]
+		email.style.color = colors[2]
+		
+		if (email.style.opacity === "1") {
+			if (colors[0] === "red") warningp.innerText = "Your password must be at least six characters and include one number, one lowercase letter, and one uppercase leter.";
+			if (colors[1] === "red") warningp2.innerText = "Your username must be at least three characters and can include letters, numbers, and the following symbols: @ . _";
+		}
+	};
 });
 
 function updateGoalText() {
