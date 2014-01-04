@@ -397,6 +397,7 @@ footer div hr {
 	padding-bottom: 4px;
 }
 
-a#editEventsModal {
+a[href="#editEventsModal"] {
 	float: right;
+	position: relative;
 }
