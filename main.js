@@ -56,6 +56,12 @@ $(document).ready(function() {
 		document.head.innerHTML += "<style type='text/css'>.hero { display: block; }</style>"
 		makeLoggedInStyle(localStorage.getItem('username'));
 	}
+	
+	for (var i=0; i<4; i++) {
+		//update the goal text in relevant places
+		whichgoal.children[i].innerText = datas[i].name;
+		window["dot"+(i+1)].innerText = datas[i].name;
+	}
 });
 
 function reloadBubbles(isFirstRun) {
