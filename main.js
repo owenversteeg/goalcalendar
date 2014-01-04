@@ -57,12 +57,16 @@ $(document).ready(function() {
 		makeLoggedInStyle(localStorage.getItem('username'));
 	}
 	
+	updateGoalText();
+});
+
+function updateGoalText() {
 	for (var i=0; i<4; i++) {
-		//update the goal text in relevant places
 		whichgoal.children[i].innerText = datas[i].name;
 		window["dot"+(i+1)].innerText = datas[i].name;
+		window["goal"+(i+1)].value = datas[i].name;
 	}
-});
+}
 
 function reloadBubbles(isFirstRun) {
 	//remove all dots on the page
@@ -260,6 +264,12 @@ function saveNewCompletedDailyGoal() {
 
 function saveNewDailyGoals() {
 	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value }, function( data ) {
+		alert(data);
+	});
+}
+
+function getNewDataFile() {
+	$.post( serverURL + "/data.js", { username: localStorage.getItem('username'), key: localStorage.getItem('key') }, function( data ) {
 		alert(data);
 	});
 }
