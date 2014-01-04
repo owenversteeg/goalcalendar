@@ -9,6 +9,8 @@ var highlighted = -1; //Which cell ID is highlighted as the current date. Only a
 var oldHighlighted = -1; //When the "highlighted" date was last changed, whatever its' prior value was | Antiquated
 var isHighlighted = true; //Whether or not something on the current page is highlighted. | Antiquated
 
+var serverURL = "http://goalcalendar.aws.af.cm";
+
 function chMon(p) {
 	//Change the month - p=previous month, n=next
 	if (p === 'p') { 
@@ -195,7 +197,7 @@ window.onload=resizeStuff;
 function login() {
 	signin.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
 	signin.onclick = console.log;
-	$.post( "http://goalcalendar.aws.af.cm/login", { username: username.value, password: password.value }, function(data) {
+	$.post( serverURL + "/login", { username: username.value, password: password.value }, function(data) {
 		if (data.indexOf('You have been logged in!') !== -1) {
 			alert(data.substr(0,data.indexOf('|')-1));
 			var key = data.substr(data.indexOf('|')+2);
@@ -224,7 +226,7 @@ function register() {
 	//make the spinner
 	signup.innerHTML = "<img src='http://i.imgur.com/4LwieHm.gif' alt='loading icon' style='height: 30px;'></img>";
 	signup.onclick = console.log;
-	$.post( "http://goalcalendar.aws.af.cm/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
+	$.post( serverURL + "/register", { username: username.value, password: password.value, email: email.value }, function( data ) {
 		if (data.indexOf('Your account has been made!') !== -1) {
 			alert(data.substr(0,data.indexOf('|')-1));
 			var key = data.substr(data.indexOf('|')+2);
@@ -245,7 +247,7 @@ function register() {
 if (localStorage.getItem('username') && localStorage.getItem('key')) document.head.innerHTML += "<style type='text/css'>.hero { display: none; }</style>"
 
 function saveNewCompletedDailyGoal() {
-	$.post( "http://goalcalendar.aws.af.cm/newCompletedDailyGoal", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), dailygoaldate: dailygoaldate.value, dailygoaltime: dailygoaltime.value, dailygoaldescription: dailygoaldescription.value }, function( data ) {
+	$.post( serverURL + "/newCompletedDailyGoal", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), dailygoaldate: dailygoaldate.value, dailygoaltime: dailygoaltime.value, dailygoaldescription: dailygoaldescription.value }, function( data ) {
 		alert(data);
 	});
 }
