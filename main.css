@@ -396,3 +396,7 @@ footer div hr {
 #signup.nohover {
 	padding-bottom: 4px;
 }
+
+a#editEventsModal {
+	float: right;
+}
