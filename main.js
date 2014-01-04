@@ -2,6 +2,18 @@
 
 /*jshint eqeqeq:true, bitwise:true, strict:false, undef:true, unused:true, curly:true, browser:true */
 
+function blankEvents() {
+	datas = [];
+	goal1 = {'name': 'Goal 1','color': 'blue'};
+	goal2 = {'name': 'Goal 2','color': 'yellow'};
+	goal3 = {'name': 'Goal 3','color': 'green'};
+	goal4 = {'name': 'Goal 4','color': 'red'};
+	datas.push(goal1, goal2, goal3, goal4);
+
+	reloadBubbles();
+	updateGoalText();
+}
+
 function validateEmail(email) {
 	//http://stackoverflow.com/a/46181/1608264
 	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -251,6 +263,8 @@ function login() {
 			localStorage.setItem('username', username.value);
 			localStorage.setItem('key', key);
 			makeLoggedInStyle(username.value);
+
+			getNewDataFile();
 		} else {
 			alert(data);
 			$('#signin').removeClass('nohover');
@@ -262,12 +276,20 @@ function login() {
 
 function makeLoggedInStyle(usernameToUse) {
 	all.style.height = "500px";
-	document.getElementsByClassName('herobody')[0].innerHTML = "Signed in as " + usernameToUse + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
-	document.getElementsByClassName('signuporin')[0].innerHTML = '';
+	document.getElementsByClassName('signuporin')[0].innerHTML = "Signed in as " + usernameToUse + " &middot; <a class='logout' onclick='logout()'>Logout</a>"; 
+	document.getElementsByClassName('herobody')[0].innerHTML = '<a onclick="showHelpText();">Help</a>';
 	//document.getElementsByClassName('signuporin')[0].innerHTML = '<button class="btn-a btn-small" style="margin: 0;">Add Event</button>;
-	//document.getElementsByClassName('signuporin')[0].style.cssText += "float: left; text-align: left; margin-top: 2px;";
-	document.getElementsByClassName('herobody')[0].style.textAlign = 'right';
-	document.getElementsByClassName('herobody')[0].style.float = 'right';
+	document.getElementsByClassName('signuporin')[0].style.cssText += "color: white; float: left; text-align: left; margin-top: 2px;";
+	document.getElementsByClassName('herobody')[0].style.cssText += "width: 330px;"
+}
+
+function showHelpText() {
+	document.getElementsByClassName('herobody')[0].innerHTML = "Welcome to GoalCalendar! To get started, rename your goals by clicking on the list of goals in the bottom right corner.<br><br>Next, mark a daily goal as completed by clicking on a day number.";
+}
+
+function getUserStarted() {
+	blankEvents();
+	showHelpText();
 }
 
 function register() {
@@ -283,7 +305,7 @@ function register() {
 			localStorage.setItem('key', key);
 			makeLoggedInStyle(username.value);
 			
-			alert("Now that you've signed up, you need to add goals. Click on a goal in the bottom right corner to edit it.")
+			getUserStarted();
 		} else {
 			alert(data);
 			$('#signup').removeClass('nohover');
@@ -304,6 +326,7 @@ function saveNewCompletedDailyGoal() {
 		savenewcompleteddailygoalbutton.innerHTML = "Save";
 		$('#savenewcompleteddailygoalbutton').removeClass('nohover');
 		alert(data);
+		getNewDataFile();
 	});
 }
 
@@ -315,11 +338,14 @@ function saveNewDailyGoals() {
 		$('#savenewdailygoalsbutton').removeClass('nohover');
 		savenewdailygoalsbutton.innerHTML = "Save";
 		alert(data);
+		getNewDataFile();
 	});
 }
 
 function getNewDataFile() {
 	$.post( serverURL + "/data.js", { username: localStorage.getItem('username'), key: localStorage.getItem('key') }, function( data ) {
 		eval(data); //yadda yadda
+		reloadBubbles();
+		updateGoalText();
 	});
 }
