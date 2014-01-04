@@ -62,7 +62,7 @@ function reloadBubbles() {
 		this.innerHTML = "";
 		this.id = 'dots'+x;
 		//bacon-wrapped dot divs (or rather, a-wrapped dot divs)
-		this.parentElement.innerHTML = '<a href="#newDailyGoalCompletedModal" rel="modal:open" style="display: block;" onclick="dailygoaldate.value=\''+(currentlySelectedDate.getMonth+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+currentlySelectedDate.getUTCFullYear()+'\'>'+this.parentElement.innerHTML+'</a>';
+		this.parentElement.innerHTML = '<a href="#newDailyGoalCompletedModal" rel="modal:open" style="display: block;" onclick="dailygoaldate.value=\''+(currentlySelectedDate.getMonth()+1)+'/'+window["dots"+x].parentElement.children[0].children[0].innerText+currentlySelectedDate.getUTCFullYear()+'\'>'+this.parentElement.innerHTML+'</a>';
 		x++;
 	});
 	x=1;
