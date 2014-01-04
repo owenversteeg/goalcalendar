@@ -345,3 +345,19 @@ footer {
 	font-size: 40px;
 	border-radius: 10px;
 }
+
+.signuporin button.btn-small {
+	margin: 0;
+	border-radius: 6px;
+	padding: 6px 0px 9px;
+}
+
+.signuporin button.btn-small:first-of-type {
+	margin-right: 6px;
+	margin-top: 10px;
+	width: 68px;
+}
+
+.herobody h1 {
+	font-size: 3em;
+}
