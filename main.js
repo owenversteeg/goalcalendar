@@ -206,6 +206,7 @@ window.onload=resizeStuff;
 
 function login() {
 	//blue
+	$('signin').addClass('nohover');
 	signin.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 24px;'></img>";
 	signin.onclick = console.log;
 	$.post( serverURL + "/login", { username: username.value, password: password.value }, function(data) {
@@ -234,6 +235,7 @@ function makeLoggedInStyle(usernameToUse) {
 }
 
 function register() {
+	$('signup').addClass('nohover');
 	//make the spinner - it's green
 	signup.innerHTML = "<img src='http://i.imgur.com/U1OZOIn.gif' alt='loading icon' style='height: 24px;'></img>";
 	signup.onclick = console.log;
@@ -259,6 +261,7 @@ if (localStorage.getItem('username') && localStorage.getItem('key')) document.he
 
 function saveNewCompletedDailyGoal() {
 	//blue
+	$('savenewcompleteddailygoalbutton').addClass('nohover');
 	savenewcompleteddailygoalbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 24px;'></img>";
 	$.post( serverURL + "/newCompletedDailyGoal", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), dailygoaldate: dailygoaldate.value, dailygoaltime: dailygoaltime.value, dailygoaldescription: dailygoaldescription.value, whichgoal: whichgoal.value }, function( data ) {
 		savenewcompleteddailygoalbutton.innerHTML = "Save";
@@ -268,6 +271,7 @@ function saveNewCompletedDailyGoal() {
 
 function saveNewDailyGoals() {
 	//blue
+	$('savenewdailygoalsbutton').addClass('nohover');
 	savenewdailygoalsbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 24px;'></img>";
 	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value }, function( data ) {
 		savenewdailygoalsbutton.innerHTML = "Save";
