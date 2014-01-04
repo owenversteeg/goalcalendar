@@ -374,3 +374,25 @@ footer div hr {
 	font-size: 11px;
 	color: white;
 }
+
+.btn-a.nohover {
+	background: #0ae !important;
+}
+
+.btn-b.nohover {
+	background: #3c5 !important;
+}
+
+#email {
+	margin-top: 10px;
+}
+
+#signin.nohover {
+	padding: 4px 0 2px;
+	top: 7px;
+	position: relative;
+}
+
+#signup.nohover {
+	padding-bottom: 4px;
+}
