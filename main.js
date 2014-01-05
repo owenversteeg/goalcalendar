@@ -294,6 +294,7 @@ function getUserStarted() {
 	blankEvents();
 	showHelpText();
 	updateGoalText();
+	saveNewDailyGoals(true);
 }
 
 function register() {
@@ -334,11 +335,11 @@ function saveNewCompletedDailyGoal() {
 	});
 }
 
-function saveNewDailyGoals() {
+function saveNewDailyGoals(saveNewUserData) {
 	//blue
 	$('#savenewdailygoalsbutton').addClass('nohover');
 	savenewdailygoalsbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 24px;'></img>";
-	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value }, function( data ) {
+	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value, saveNewUserData: saveNewUserData }, function( data ) {
 		$('#savenewdailygoalsbutton').removeClass('nohover');
 		savenewdailygoalsbutton.innerHTML = "Save";
 		alert(data);
