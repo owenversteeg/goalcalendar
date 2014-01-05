@@ -115,6 +115,7 @@ function updateGoalText() {
 		whichgoal.children[i].innerText = datas[i].name;
 		window["dot"+(i+1)].innerText = datas[i].name;
 		window["goal"+(i+1)].value = datas[i].name;
+		$('#editEventsModal div input')[i].value = datas[i].name;
 	}
 }
 
