@@ -41,7 +41,7 @@ var oldHighlighted = -1; //When the "highlighted" date was last changed, whateve
 var isHighlighted = true; //Whether or not something on the current page is highlighted. | Antiquated
 
 var serverURL = "http://goalcalendar.aws.af.cm";
-
+n
 function chMon(p) {
 	//Change the month - p=previous month, n=next
 	if (p === 'p') { 
@@ -336,10 +336,12 @@ function saveNewCompletedDailyGoal() {
 	});
 }
 
-function saveNewDailyGoals(saveNewUserData) {
+function saveNewDailyGoals(saveNewUserData, isUserActivated) {
 	//blue
-	$('#savenewdailygoalsbutton').addClass('nohover');
-	savenewdailygoalsbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 24px;'></img>";
+	if (isUserActivated) {
+		$('#savenewdailygoalsbutton').addClass('nohover');
+		savenewdailygoalsbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 24px;'></img>";
+	}
 	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value, saveNewUserData: saveNewUserData }, function( data ) {
 		$('#savenewdailygoalsbutton').removeClass('nohover');
 		savenewdailygoalsbutton.innerHTML = "Save";
