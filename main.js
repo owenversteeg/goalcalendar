@@ -283,7 +283,7 @@ function makeLoggedInStyle(usernameToUse) {
 	document.getElementsByClassName('herobody')[0].innerHTML = '<a class="link" onclick="showHelpText();">Help</a>';
 	//document.getElementsByClassName('signuporin')[0].innerHTML = '<button class="btn-a btn-small" style="margin: 0;">Add Event</button>;
 	document.getElementsByClassName('signuporin')[0].style.cssText += "color: white; text-align: right; width: auto; margin-top: -1px;";
-	document.getElementsByClassName('herobody')[0].style.cssText += "width: auto;"
+	document.getElementsByClassName('herobody')[0].style.cssText += "width: 330px;"
 }
 
 function showHelpText() {
