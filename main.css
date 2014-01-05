@@ -149,7 +149,7 @@ p {
 
 #calendar {
 	margin: 0 auto;
-	padding-top: 3%;
+	padding-top: 20px;
 	width: 100%;
 	max-width: 760px;
 	text-align: center;
@@ -365,6 +365,7 @@ footer {
 footer div hr {
 	border-bottom: 1px solid lightgray;
 	border-top: 0;
+	width: 99%;
 	margin-bottom: 25px;
 }
 
@@ -399,4 +400,8 @@ footer div hr {
 a[href="#editEventsModal"] {
 	float: right;
 	position: relative;
+}
+
+.calendarheader button {
+	margin: .3em .3em;
 }
