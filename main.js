@@ -41,7 +41,7 @@ var oldHighlighted = -1; //When the "highlighted" date was last changed, whateve
 var isHighlighted = true; //Whether or not something on the current page is highlighted. | Antiquated
 
 var serverURL = "http://goalcalendar.aws.af.cm";
-n
+
 function chMon(p) {
 	//Change the month - p=previous month, n=next
 	if (p === 'p') { 
