@@ -342,7 +342,7 @@ function saveNewDailyGoals(saveNewUserData, isUserActivated) {
 		$('#savenewdailygoalsbutton').addClass('nohover');
 		savenewdailygoalsbutton.innerHTML = "<img src='http://i.imgur.com/qdIdw47.gif' alt='loading icon' style='height: 24px;'></img>";
 	}
-	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goal1.value, goal2: goal2.value, goal3: goal3.value, goal4: goal4.value, saveNewUserData: saveNewUserData }, function( data ) {
+	$.post( serverURL + "/nameDailyGoals", { username: localStorage.getItem('username'), key: localStorage.getItem('key'), goal1: goalform1.value, goal2: goalform2.value, goal3: goalform3.value, goal4: goalform4.value, saveNewUserData: saveNewUserData }, function( data ) {
 		$('#savenewdailygoalsbutton').removeClass('nohover');
 		savenewdailygoalsbutton.innerHTML = "Save";
 		alert(data);
